@@ -44,6 +44,9 @@ set foldmethod=indent
 set autoread
 set ignorecase
 set smartcase
+autocmd InsertLeave * :pclose
+autocmd InsertLeave * :Limelight!
+autocmd InsertEnter * :Limelight
 
 imap <c-k> <Up>
 imap <c-j> <Down>
@@ -66,12 +69,14 @@ set fenc=utf-8
 set fileencodings=utf-8,latin-1,ascii,gbk,usc-bom,cp936,Shift-JIS
 set ff=unix
 set fileformats=unix,dos,mac
-
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 language messages zh_CN.utf-8
 
 nnoremap <c-s> :w<CR>
 nnoremap <c-c> ESC
-nnoremap <c-c> :nohl<CR>
+nnoremap <c-c> :nohl<CR>:pclose<CR>
+
 nnoremap <c-F9> :SCCompile<CR>
 nnoremap <c-F10> :SCCompileRun<CR>
 nnoremap <c-F11> :SCChooseCompiler<CR>
@@ -89,4 +94,6 @@ let g:ycm_semantic_triggers =  {
   \   'lua' : ['.', ':'],
   \   'erlang' : [':'],
   \ }
-autocmd InsertLeave * :pclose
+let mapleader=","
+nnoremap <leader>l :Limelight<CR>
+nnoremap <leader>cl :Limelight!<CR>
