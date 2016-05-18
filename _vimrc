@@ -15,6 +15,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'xuhdev/SingleCompile'
 Plugin 'Valloric/YouCompleteMe', {'do':'./install.py'}
 Plugin 'chriskempson/base16-vim'
+Plugin 'scrooloose/nerdtree'
 
 let c_cpp_comments=0
 
@@ -81,7 +82,7 @@ nnoremap <c-F9> :SCCompile<CR>
 nnoremap <c-F10> :SCCompileRun<CR>
 nnoremap <c-F11> :SCChooseCompiler<CR>
 let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_semantic_triggers =  {
+let g:ycm_semantic_triggers =  {'py':['re!\w+'],
   \   'c' : ['->', '.'],
   \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
   \             're!\[.*\]\s'],
@@ -97,3 +98,7 @@ let g:ycm_semantic_triggers =  {
 let mapleader=","
 nnoremap <leader>l :Limelight<CR>
 nnoremap <leader>cl :Limelight!<CR>
+nnoremap <leader>v :68vs<CR>
+nnoremap <leader>s :15sp<CR>
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>r :vertical resize 68<CR>
