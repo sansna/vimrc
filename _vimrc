@@ -45,6 +45,7 @@ set smartcase						"ignore cases when no upper case
 autocmd InsertLeave * :pclose				"leaving insert mode will trigger a :pclose which closes scratch window
 autocmd InsertLeave * :Limelight!			"leaving insert mode will trigger
 autocmd InsertEnter * :Limelight				"entering insert mode will trigger
+au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 79 . 'v.\+', -1)
 
 imap <c-k> <Up>					"insert mode ctrl+k means moving cursor up
 imap <c-j> <Down>
