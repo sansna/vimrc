@@ -65,6 +65,7 @@ imap <c-j> <Down>
 imap <c-h> <Left>
 imap <c-l> <Right>
 
+set hlsearch
 set nu							"show line number
 set laststatus=2						"last status height set to 2
 set cmdheight=2					"if cmdheight is gt 2, messages will be displayed on last line
@@ -97,6 +98,7 @@ nnoremap <c-F11> :SCChooseCompiler<CR>		"shortcut for changing compiler
 let g:ycm_min_num_identifier_candidate_chars = 2	"ycm identifier at least requires 2 letters
 let g:neocomplcache_enable_at_startup=1
 let g:cscope_silent = 1
+let g:NERDTreeIgnore=['\.o$']
 let g:ycm_semantic_triggers =  {
   \ 'python':['re!\w+'],
   \   'c' : ['->', '.','re!\w+'],
