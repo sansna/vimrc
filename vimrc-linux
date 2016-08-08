@@ -1,8 +1,8 @@
 set nocompatible					"needed by Vundle.vim
 filetype off						"needed by Vundle.vim, after initialization of vundle, this value can be changed by filetype plugin on
-"set path+=~/dpdk-16.04/x86_64-native-linuxapp-gcc/include
+set path+=~/dpdk-16.04/x86_64-native-linuxapp-gcc/include
 set path+=/usr/include
-"set path+=/root/dpdk-16.04/examples
+set path+=/root/dpdk-16.04/examples
 set tags=tags;                              "find the tags recursively upward
 
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/		"set CWD for Vundle.vim Plugin
@@ -26,6 +26,7 @@ Plugin 'brookhong/cscope.vim'               "this plugin helps find definition
 Plugin 'szw/vim-tags'                       "automatically find tags
 Plugin 'vim-scripts/drawit'                 "draw visio in vim
 Plugin 'vim-scripts/taglist.vim'            "right window: code preview
+Plugin 'vim-scripts/a.vim'                  "switching between .h .c
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -88,7 +89,7 @@ source $VIMRUNTIME/delmenu.vim			"things needed to clear welcome screen
 source $VIMRUNTIME/menu.vim			"things needed to clear welcome screen
 "language messages zh_CN.utf-8				"status bar and more, infos are able to be displayed in zh_CN
 
-nnoremap <c-s> :w<CR>				"shortcut for save
+nnoremap <c-s> :w<CR>
 nnoremap <c-c> ESC					"shortcut for esc
 nnoremap <c-c> :nohl<CR>:pclose<CR>		"shortcut for no-high-light & close scratch [ Plugin.YCM ]
 
@@ -126,6 +127,7 @@ nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
 nnoremap <leader>fd :call CscopeFind('g',expand('<cword>'))<CR>
 nnoremap <leader>u :set nu<CR>
 nnoremap <leader>i :set nu!<CR>
+nnoremap <leader>a :A<CR>
 
 let g:Tlist_Auto_Highlight_Tag = 1              "taglist configuration
 let g:Tlist_Tlist_Close_On_Select = 1
