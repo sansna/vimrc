@@ -39,7 +39,7 @@ filetype plugin on					"automatically detects file type using filetype plugin, a
 filetype plugin indent on				"turns on filetype detection, and sets different tab settings after detection done
 let g:ycm_auto_trigger = 1				"let ycm trigger automatically
 let g:ycm_min_num_of_chars_for_completion = 2		"set ycm to start completion with at least 2 letters
-let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'  "this should be specified after succesfully compiled ycm
+let g:ycm_global_ycm_extra_conf = '$VIM/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'  "this should be specified after succesfully compiled ycm
 let g:ycm_add_preview_to_completeopt=1  "display the scratch window
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 0
