@@ -1,8 +1,8 @@
 set nocompatible					"needed by Vundle.vim
 filetype off						"needed by Vundle.vim, after initialization of vundle, this value can be changed by filetype plugin on
-set path+=~/dpdk-16.04/x86_64-native-linuxapp-gcc/include
+"set path+=~/dpdk-16.04/x86_64-native-linuxapp-gcc/include
 set path+=/usr/include
-set path+=/root/dpdk-16.04/examples
+"set path+=/root/dpdk-16.04/examples
 set tags=tags;                              "find the tags recursively upward
 
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/		"set CWD for Vundle.vim Plugin
@@ -90,12 +90,17 @@ source $VIMRUNTIME/menu.vim			"things needed to clear welcome screen
 "language messages zh_CN.utf-8				"status bar and more, infos are able to be displayed in zh_CN
 
 nnoremap <c-s> :w<CR>
-nnoremap <c-c> ESC					"shortcut for esc
-nnoremap <c-c> :nohl<CR>:pclose<CR>		"shortcut for no-high-light & close scratch [ Plugin.YCM ]
+nnoremap <c-c> ESC
+"shortcut for esc
+nnoremap <c-c> :nohl<CR>:pclose<CR>
+"shortcut for no-high-light & close scratch [ Plugin.YCM ]
 
-nnoremap <c-F9> :SCCompile<CR>			"shortcut for compilation
-nnoremap <c-F10> :SCCompileRun<CR>		"shortcut for running
-nnoremap <c-F11> :SCChooseCompiler<CR>		"shortcut for changing compiler
+nnoremap <c-F9> :SCCompile<CR>
+"shortcut for compilation
+nnoremap <c-F10> :SCCompileRun<CR>
+"shortcut for running
+nnoremap <c-F11> :SCChooseCompiler<CR>
+"shortcut for changing compiler
 let g:ycm_min_num_identifier_candidate_chars = 2	"ycm identifier at least requires 2 letters
 let g:neocomplcache_enable_at_startup=1
 let g:cscope_silent = 1
@@ -115,12 +120,16 @@ let g:ycm_semantic_triggers =  {
   \   'erlang' : [':'],
   \ }							"ycm conditions for completion according to different languages
 let mapleader=","					"define <leader> as ','
-nnoremap <leader>l :Limelight<CR>			"turn limelight on
-nnoremap <leader>cl :Limelight!<CR>			"turn limelight off
+nnoremap <leader>l :Limelight<CR>
+"turn limelight on
+nnoremap <leader>cl :Limelight!<CR>
+"turn limelight off
 nnoremap <leader>v :68vs<CR>
 nnoremap <leader>s :15sp<CR>
-nnoremap <leader>n :NERDTree<CR>			"open nerdtree explorer
-nnoremap <leader>r :vertical resize 68<CR>		"resizes split window
+nnoremap <leader>n :NERDTree<CR>
+"open nerdtree explorer
+nnoremap <leader>r :vertical resize 68<CR>
+"resizes split window
 nnoremap <leader>t :TlistOpen<CR>
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
