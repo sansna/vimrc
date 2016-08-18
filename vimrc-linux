@@ -90,6 +90,7 @@ source $VIMRUNTIME/menu.vim			"things needed to clear welcome screen
 "language messages zh_CN.utf-8				"status bar and more, infos are able to be displayed in zh_CN
 
 nnoremap <c-s> :w<CR>
+"for more info about certain shortcut, use :verbose map <c-s>
 nnoremap <c-c> ESC
 "shortcut for esc
 nnoremap <c-c> :nohl<CR>:pclose<CR>
