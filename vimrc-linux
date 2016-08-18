@@ -91,7 +91,7 @@ source $VIMRUNTIME/menu.vim			"things needed to clear welcome screen
 
 nnoremap <c-s> :w<CR>
 "for more info about certain shortcut, use :verbose map <c-s>
-nnoremap <c-c> ESC
+inoremap <c-c> ESC
 "shortcut for esc
 nnoremap <c-c> :nohl<CR>:pclose<CR>
 "shortcut for no-high-light & close scratch [ Plugin.YCM ]
