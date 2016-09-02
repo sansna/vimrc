@@ -91,7 +91,7 @@ source $VIMRUNTIME/menu.vim			"things needed to clear welcome screen
 
 nnoremap <c-s> :w<CR>
 "for more info about certain shortcut, use :verbose map <c-s>
-inoremap <c-c> ESC
+inoremap <c-c> <ESC>
 "shortcut for esc
 nnoremap <c-c> :nohl<CR>:pclose<CR>
 "shortcut for no-high-light & close scratch [ Plugin.YCM ]
@@ -137,6 +137,8 @@ nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
 nnoremap <leader>fd :call CscopeFind('g',expand('<cword>'))<CR>
 nnoremap <leader>u :set nu<CR>
 nnoremap <leader>i :set nu!<CR>
+nnoremap <leader>o :set relativenumber<CR>
+nnoremap <leader>p :set relativenumber!<CR>
 nnoremap <leader>a :A<CR>
 
 let g:Tlist_Auto_Highlight_Tag = 1              "taglist configuration
