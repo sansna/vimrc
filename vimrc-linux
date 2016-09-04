@@ -27,6 +27,8 @@ Plugin 'szw/vim-tags'                       "automatically find tags
 Plugin 'vim-scripts/drawit'                 "draw visio in vim
 Plugin 'vim-scripts/taglist.vim'            "right window: code preview
 Plugin 'vim-scripts/a.vim'                  "switching between .h .c
+Plugin 'xolox/vim-misc'                     "pre-requisite of lua-ftplugin
+Plugin 'xolox/vim-lua-ftplugin'             "the lua-ftplugin
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -43,6 +45,13 @@ let g:ycm_global_ycm_extra_conf = '$VIM/vimfiles/bundle/YouCompleteMe/third_part
 let g:ycm_add_preview_to_completeopt=1  "display the scratch window
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_server_python_interpreter='/usr/bin/python2'              "in archlinux, where python= python3, ycm may be built in python2, but loading python as python3.. so this should be pointed out.
+let g:lua_complete_omni = 1                                         "opens autocomplete for lua, pattern given at ycm's conf
+"let g:lua_check_syntax = 0                                          "default 1, if not need to check syntax everytime save file, set0
+"let g:lua_check_globals = 0                                         "default 1, if not check undefined globals, set 0
+"let g:lua_interpreter_path='/path/to/lua'                           "if installed lua somewhere else and not connected to vim, specify it.
+"let g:lua_internal = 0                                              "if not wish to use the interface connected to vim, set this to 0, and set the above line correctly
+"let g:lua_omni_blacklist=['somefolder\somemodule','another']        "this can block some modules at omni complete time
 set t_Co=256						"sets terminal color
 set backspace=2					"enable backspace
 set smartindent						"indentation
@@ -117,7 +126,7 @@ let g:ycm_semantic_triggers =  {
   \   'php' : ['->', '::'],
   \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
   \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
+  \   'lua' : ['.', ':','re!\w+'],
   \   'erlang' : [':'],
   \ }							"ycm conditions for completion according to different languages
 let mapleader=","					"define <leader> as ','
@@ -136,9 +145,7 @@ nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
 nnoremap <leader>fd :call CscopeFind('g',expand('<cword>'))<CR>
 nnoremap <leader>w :set wrap<CR>
-nnoremap <leader>u :set nu<CR>
 nnoremap <leader>i :set nu!<CR>
-nnoremap <leader>o :set relativenumber<CR>
 nnoremap <leader>p :set relativenumber!<CR>
 nnoremap <leader>a :A<CR>
 
