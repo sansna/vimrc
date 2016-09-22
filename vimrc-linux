@@ -144,8 +144,9 @@ nnoremap <leader>t :TlistOpen<CR>
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
 nnoremap <leader>fd :call CscopeFind('g',expand('<cword>'))<CR>
-nnoremap <leader>w :set wrap<CR>
+nnoremap <leader>w :set wrap!<CR>
 nnoremap <leader>i :set nu!<CR>
+nnoremap <leader>o :set foldenable!<CR>
 nnoremap <leader>p :set relativenumber!<CR>
 nnoremap <leader>a :A<CR>
 "json expansion for current line. using u to go back
