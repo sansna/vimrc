@@ -18,7 +18,7 @@ Plugin 'sickill/vim-pasta'					"paste things beautifully with p
 Plugin 'scrooloose/syntastic'				"check syntastic of c/c++, before compile
 Plugin 'xuhdev/SingleCompile'				"compile, run with one key press
 Plugin 'Valloric/YouCompleteMe', {'do':'./install.py'}	" auto completion
-"Plugin 'chriskempson/base16-vim'			"color scheme of vim. In linux, let's install screen
+Plugin 'chriskempson/base16-vim'			"color scheme of vim. In linux, let's install screen
 Plugin 'scrooloose/nerdtree'				"filesystem explorer
 "Plugin 'Shougo/neocomplcache.vim'          "note: this plugin automatically presses esc
 "Plugin 'altercation/vim-colors-solarized'   "color scheme which is not used in linux
@@ -84,7 +84,12 @@ set cursorline						"highlight the whole line where cursor is
 set nowrap						"show long line in one line, if want to show in multiple lines, set wrap
 set background=dark
 
-"colorscheme base16-tomorrow 				"color scheme
+"needed for base16-color-scheme in linux
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif
+colorscheme base16-twilight"color scheme
 set shortmess=atI					"disable welcome screen
 set guioptions-=m					"disable menu
 set guioptions-=T					"disable tools
