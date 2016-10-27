@@ -84,12 +84,12 @@ set cursorline						"highlight the whole line where cursor is
 set nowrap						"show long line in one line, if want to show in multiple lines, set wrap
 set background=dark
 
-"needed for base16-color-scheme in linux
+"Needed for base16-color-scheme in linux
 if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
 endif
-colorscheme base16-twilight"color scheme
+"colorscheme base16-twilight         "specify color scheme, not needed any more if using base16-shell
 set shortmess=atI					"disable welcome screen
 set guioptions-=m					"disable menu
 set guioptions-=T					"disable tools
