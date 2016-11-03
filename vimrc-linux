@@ -138,6 +138,7 @@ let g:ycm_semantic_triggers =  {
 let mapleader=","					"define <leader> as ','
 nnoremap <leader>cl :Limelight!<CR>
 "turn limelight on/off, better not use in linux
+nnoremap <leader>g gg=G
 nnoremap <leader>v :68vs<CR>
 nnoremap <leader>s :15sp<CR>
 nnoremap <leader>n :NERDTree<CR>
