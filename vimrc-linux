@@ -30,6 +30,7 @@ Plugin 'vim-scripts/a.vim'                  "switching between .h .c
 Plugin 'xolox/vim-misc'                     "pre-requisite of lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'             "the lua-ftplugin
 Plugin 'vim-scripts/TagHighlight'           "The func/class name coloring for several languages
+Plugin 'fatih/vim-go'                       "The go-code completer
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -78,6 +79,7 @@ imap <c-l> <Right>
 
 set hlsearch
 set nu							"show line number
+set relativenumber              "show relative number instead
 set laststatus=2						"last status height set to 2
 set cmdheight=2					"if cmdheight is gt 2, messages will be displayed on last line
 set cursorline						"highlight the whole line where cursor is
@@ -181,3 +183,18 @@ let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Use_SingleClick = 1
 let g:Tlist_WinWidth = 32
 let g:Tlist_WinHeight = 12
+
+"Golang Short-cuts
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
