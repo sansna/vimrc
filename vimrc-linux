@@ -124,7 +124,7 @@ let g:neocomplcache_enable_at_startup=1
 let g:cscope_silent = 1
 let g:NERDTreeIgnore=['\.o$']
 let g:ycm_semantic_triggers =  {
-  \ 'python':['re!\w+'],
+  \ 'python' : ['re!\w+'],
   \   'c' : ['->', '.','re!\w+'],
   \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
   \             're!\[.*\]\s'],
@@ -132,17 +132,17 @@ let g:ycm_semantic_triggers =  {
   \   'cpp,objcpp' : ['->', '.', '::','re!\w+'],
   \   'perl' : ['->'],
   \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.', 're!\w+'],
   \   'ruby' : ['.', '::'],
   \   'lua' : ['.', ':','re!\w+'],
   \   'erlang' : [':'],
   \ }							"ycm conditions for completion according to different languages
 let mapleader=","					"define <leader> as ','
 nnoremap <leader>cl :Limelight!<CR>
-"turn limelight on/off, better not use in linux
+"turn limelight off
 nnoremap <leader>g gg=G
-nnoremap <leader>l //g<CR>jzt
-nnoremap <leader>L ?<CR>njzt
+nnoremap <leader>l //g<CR>jzt:nohl<CR>
+nnoremap <leader>L ?<CR>njzt:nohl<CR>
 nnoremap <leader>v :68vs<CR>
 nnoremap <leader>s :15sp<CR>
 nnoremap <leader>n :NERDTree<CR>
