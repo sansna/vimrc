@@ -68,7 +68,14 @@ set autoread						"file changed if run, it will be reloaded in vim
 set ignorecase						"ignore cases when using / to find strings
 set smartcase						"ignore cases when no upper case
 autocmd InsertLeave * :pclose				"leaving insert mode will trigger a :pclose which closes scratch window
-"autocmd InsertLeave * :Limelight!			"leaving insert mode will trigger
+autocmd InsertLeave * :let __line=line('.')
+autocmd InsertLeave * :let __col=col('.')
+autocmd InsertLeave * :Limelight!
+autocmd InsertLeave * :cal cursor(__line,__col)
+autocmd InsertLeave * :unlet __col
+autocmd InsertLeave * :unlet __line
+"limelight relight
+"leaving insert mode will trigger
 autocmd InsertEnter * :Limelight				"entering insert mode will trigger
 au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 79 . 'v.\+', -1)
 
@@ -138,7 +145,7 @@ let g:ycm_semantic_triggers =  {
   \   'erlang' : [':'],
   \ }							"ycm conditions for completion according to different languages
 let mapleader=","					"define <leader> as ','
-nnoremap <leader>cl :Limelight!<CR>
+"nnoremap <leader>cl :let __line=<C-r>=line('.')<CR><CR>:let __col=<C-r>=col('.')<CR><CR>:Limelight!<CR>:cal cursor(__line,__col)<CR>:unlet __col<CR>:unlet __line<CR>
 "turn limelight off
 nnoremap <leader>g gg=G
 nnoremap <leader>l //g<CR>jzt:nohl<CR>
