@@ -129,7 +129,7 @@ nnoremap <c-F11> :SCChooseCompiler<CR>
 let g:ycm_min_num_identifier_candidate_chars = 2	"ycm identifier at least requires 2 letters
 let g:neocomplcache_enable_at_startup=1
 let g:cscope_silent = 1
-let g:NERDTreeIgnore=['\.o$']
+let g:NERDTreeIgnore=['\.o$','\.lo$']
 let g:ycm_semantic_triggers =  {
   \ 'python' : ['re!\w+'],
   \   'c' : ['->', '.','re!\w+'],
@@ -158,7 +158,7 @@ nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>r :vertical resize 68<CR>
 "resizes split window
 nnoremap <leader>t :TlistOpen<CR>
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>fa :call CscopeUpdateDB()<CR> :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
 nnoremap <leader>fd :call CscopeFind('g',expand('<cword>'))<CR>
 nnoremap <leader>w :set wrap!<CR>
@@ -173,6 +173,7 @@ nnoremap <leader>j ::<C-r>=line('.')<CR>!python -m json.tool<CR>
 "json expansion for current line. using u to go back
 nnoremap <leader>u :call clearmatches()<CR>
 "see vim.wikia.com/wiki/Highlight_long_lines
+"nnoremap <leader>c :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> :!cscope -b -i cscope.files -f cscope.out<CR> :cs kill -1<CR>:cs add cscope.out<CR> :call CscopeUpdateDB()<CR>
 
 let g:Tlist_Auto_Highlight_Tag = 1              "taglist configuration
 let g:Tlist_Tlist_Close_On_Select = 1
