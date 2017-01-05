@@ -79,6 +79,12 @@ autocmd InsertLeave * :unlet __line
 "leaving insert mode will trigger
 autocmd InsertEnter * :Limelight				"entering insert mode will trigger
 au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 79 . 'v.\+', -1)
+autocmd VimEnter * call Read_CTreeXRefDB()
+function Read_CTreeXRefDB()
+    if filereadable('cctree.out') 
+        :CCTreeLoadXRefDB ./cctree.out
+    endif
+endfunction 
 
 imap <c-k> <Up>					"insert mode ctrl+k means moving cursor up
 imap <c-j> <Down>
@@ -127,6 +133,7 @@ nnoremap <c-F10> :SCCompileRun<CR>
 "shortcut for running
 nnoremap <c-F11> :SCChooseCompiler<CR>
 "shortcut for changing compiler
+nnoremap <c-x> :CCTreeSaveXRefDB cctree.out<CR>
 let g:ycm_min_num_identifier_candidate_chars = 2	"ycm identifier at least requires 2 letters
 let g:neocomplcache_enable_at_startup=1
 let g:cscope_silent = 1
@@ -210,3 +217,6 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+"CCTree Cfg
+let CCTreeDbFileMaxSize=1000000000
