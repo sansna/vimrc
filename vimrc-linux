@@ -31,6 +31,7 @@ Plugin 'xolox/vim-misc'                     "pre-requisite of lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'             "the lua-ftplugin
 Plugin 'vim-scripts/TagHighlight'           "The func/class name coloring for several languages
 Plugin 'fatih/vim-go'                       "The go-code completer
+Plugin 'hari-rangarajan/CCTree'             "Call Tree View
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -173,7 +174,7 @@ nnoremap <leader>j ::<C-r>=line('.')<CR>!python -m json.tool<CR>
 "json expansion for current line. using u to go back
 nnoremap <leader>u :call clearmatches()<CR>
 "see vim.wikia.com/wiki/Highlight_long_lines
-"nnoremap <leader>c :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> :!cscope -b -i cscope.files -f cscope.out<CR> :cs kill -1<CR>:cs add cscope.out<CR> :call CscopeUpdateDB()<CR>
+nnoremap <leader>C :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> :!cscope -b -i cscope.files -f cscope.out<CR> :cs kill -1<CR>:cs add cscope.out<CR> :call CscopeUpdateDB()<CR>
 
 let g:Tlist_Auto_Highlight_Tag = 1              "taglist configuration
 let g:Tlist_Tlist_Close_On_Select = 1
