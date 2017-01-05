@@ -31,7 +31,7 @@ Plugin 'xolox/vim-misc'                     "pre-requisite of lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'             "the lua-ftplugin
 Plugin 'vim-scripts/TagHighlight'           "The func/class name coloring for several languages
 Plugin 'fatih/vim-go'                       "The go-code completer
-Plugin 'hari-rangarajan/CCTree'             "Call Tree View
+Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</>>,c-p,<c-\--/=>
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
