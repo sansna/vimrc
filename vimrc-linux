@@ -124,6 +124,8 @@ nnoremap <c-s> :w<CR>
 "for more info about certain shortcut, use :verbose map <c-s>
 inoremap <c-c> <ESC>
 "shortcut for esc
+vnoremap // y/<C-r>"<CR>N
+"under visual selection search
 nnoremap <c-c> :nohl<CR>:pclose<CR>
 "shortcut for no-high-light & close scratch [ Plugin.YCM ]
 nnoremap <c-Q> :q!<CR>
