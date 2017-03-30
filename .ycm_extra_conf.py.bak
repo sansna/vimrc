@@ -119,10 +119,12 @@ def AddDirsRecursively( flagsRec ):
     global flags
     new_flags = []
     for flag in flagsRec:
-        for d in glob.glob(flag):
-            if os.path.isdir(d):
-                new_flags.append('-I')
-                new_flags.append(d)
+        for path,dirs,files in os.walk(flag):
+            for d in dirs:
+                folder = os.path.join(path,d)
+                if os.path.isdir(folder):
+                    new_flags.append('-I')
+                    new_flags.append(folder)
 
     flags += new_flags
 
