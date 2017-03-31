@@ -1,8 +1,6 @@
 set nocompatible					"needed by Vundle.vim
 filetype off						"needed by Vundle.vim, after initialization of vundle, this value can be changed by filetype plugin on
-"set path+=~/dpdk-16.04/x86_64-native-linuxapp-gcc/include
 set path+=/usr/include
-"set path+=/root/dpdk-16.04/examples
 set tags=tags;                              "find the tags recursively upward
 
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/		"set CWD for Vundle.vim Plugin
@@ -150,7 +148,7 @@ let g:ycm_semantic_triggers =  {
   \   'cpp,objcpp' : ['->', '.', '::','re!\w+'],
   \   'perl' : ['->'],
   \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.', 're!\w+'],
+  \   'cs,java,javascript,typescript,d,perl6,scala,vb,elixir,go' : ['.', 're!\w+'],
   \   'ruby' : ['.', '::'],
   \   'lua' : ['.', ':','re!\w+'],
   \   'erlang' : [':'],
