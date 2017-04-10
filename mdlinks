@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+# /usr/local/bin/mdlinks: 
+# To generate markdown links syntax.
+# Get/change from hk0i/dotfiles/bin/mdlinks.
+
 import re
 import sys, os
 from sets import Set
