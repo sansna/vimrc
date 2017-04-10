@@ -30,6 +30,8 @@ Plugin 'xolox/vim-lua-ftplugin'             "the lua-ftplugin
 Plugin 'vim-scripts/TagHighlight'           "The func/class name coloring for several languages
 Plugin 'fatih/vim-go'                       "The go-code completer
 Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</>>,c-p,<c-\--/=>, before using it, :CCTreeLoadDB<CR>, or <leader>C
+"Plugin 'godlygeek/tabular'                 "prerequisite for vim-markdown
+"Plugin 'plasticboy/vim-markdown'           "markdown plugin.. little use
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -207,19 +209,32 @@ let g:Tlist_WinWidth = 32
 let g:Tlist_WinHeight = 12
 
 "Golang Short-cuts
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go call SetGOOptions()
+function SetGOOptions()
+    nmap <leader>r <Plug>(go-run)
+    nmap <leader>b <Plug>(go-build)
+    nmap <leader>t <Plug>(go-test)
+    nmap <leader>c <Plug>(go-coverage)
+    nmap <Leader>ds <Plug>(go-def-split)
+    nmap <Leader>dv <Plug>(go-def-vertical)
+    nmap <Leader>dt <Plug>(go-def-tab)
+    nmap <Leader>gd <Plug>(go-doc)
+    nmap <Leader>gv <Plug>(go-doc-vertical)
+    nmap <Leader>gb <Plug>(go-doc-browser)
+    nmap <Leader>s <Plug>(go-implements)
+    nmap <Leader>i <Plug>(go-info)
+    nmap <Leader>e <Plug>(go-rename)
+endfunction
 
 "CCTree Cfg
 let CCTreeDbFileMaxSize=1000000000
+
+"markdown scripts
+au FileType md call SetMDOptions()
+au FileType markdown call SetMDOptions()
+function SetMDOptions()
+    set conceallevel=2
+    set nofoldenable
+    set wrap
+    nnoremap <c-g> :%!/usr/local/bin/mdlinks<CR>
+endfunction
