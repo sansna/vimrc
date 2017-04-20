@@ -32,6 +32,7 @@ Plugin 'fatih/vim-go'                       "The go-code completer
 Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</>>,c-p,<c-\--/=>, before using it, :CCTreeLoadDB<CR>, or <leader>C
 "Plugin 'godlygeek/tabular'                 "prerequisite for vim-markdown
 "Plugin 'plasticboy/vim-markdown'           "markdown plugin.. little use
+Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words using &|!, if contain ', using ''
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -187,6 +188,7 @@ nnoremap <leader>u :call clearmatches()<CR>
 nnoremap <leader>C :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> :!cscope -b -i cscope.files -f cscope.out<CR> :cs kill -1<CR>:cs add cscope.out<CR> :call CscopeUpdateDB()<CR> :CCTreeLoadDB<CR><CR>
 nnoremap <leader>m :!man 2 <C-R><C-W><CR><CR>
 "current word
+nnoremap <leader>b :BoolPat 
 
 let g:Tlist_Auto_Highlight_Tag = 1              "taglist configuration
 let g:Tlist_Tlist_Close_On_Select = 1
