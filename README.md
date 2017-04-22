@@ -6,6 +6,6 @@ Windows \_vimrc's preview:
 -
 ![image](https://github.com/sansna/_vimrc/blob/master/preview.png)
 
-Linux vimrc-linux preview:
+Linux vimrc preview:
 -
 ![image](https://github.com/sansna/_vimrc/blob/master/preview-linux.png)
