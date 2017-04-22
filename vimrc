@@ -240,3 +240,8 @@ function SetMDOptions()
     set wrap
     nnoremap <c-g> :%!/usr/local/bin/mdlinks<CR>
 endfunction
+"c/cpp scripts
+au FileType c,cpp,h,hpp,cxx call SetCCPPOptions
+function SetCCPPOptions
+    set nofoldenable
+endfunction
