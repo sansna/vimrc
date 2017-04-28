@@ -4,22 +4,22 @@ set path+=/usr/include
 set tags=tags;                              "find the tags recursively upward
 
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/		"set CWD for Vundle.vim Plugin
-call vundle#rc('$VIM/vimfiles/bundle/')			"set CWD for all other Plugins
+call vundle#rc('$VIM/vimfiles/bundle/')     "set CWD for all other Plugins
 
-Plugin 'VundleVim/Vundle.vim'				"Manage plugins
-Plugin 'jiangmiao/auto-pairs'				"pairs {}/()/[]/""/''
-Plugin 'bufexplorer.zip'					"view tabs by <leader>be,bv,bs
-Plugin 'Lokaltog/vim-powerline'				"powerful status line
-Plugin 'wesleyche/SrcExpl'				"not frequently used, source insight like
-Plugin 'junegunn/limelight.vim'				"to be more focused
-Plugin 'sickill/vim-pasta'					"paste things beautifully with p
-Plugin 'scrooloose/syntastic'				"check syntastic of c/c++, before compile
-Plugin 'xuhdev/SingleCompile'				"compile, run with one key press
+Plugin 'VundleVim/Vundle.vim'               "Manage plugins
+Plugin 'jiangmiao/auto-pairs'               "pairs {}/()/[]/""/''
+Plugin 'bufexplorer.zip'                    "view tabs by <leader>be,bv,bs
+Plugin 'Lokaltog/vim-powerline'             "powerful status line
+Plugin 'wesleyche/SrcExpl'                  "not frequently used, source insight like
+Plugin 'junegunn/limelight.vim'             "to be more focused
+Plugin 'sickill/vim-pasta'                  "paste things beautifully with p
+Plugin 'scrooloose/syntastic'               "check syntastic of c/c++, before compile
+Plugin 'xuhdev/SingleCompile'               "compile, run with one key press
 Plugin 'Valloric/YouCompleteMe', {'do':'./install.py'}	" auto completion
 Plugin 'chriskempson/base16-vim'			"color scheme of vim. In linux, let's install screen
-Plugin 'scrooloose/nerdtree'				"filesystem explorer
+Plugin 'scrooloose/nerdtree'                "filesystem explorer
 "Plugin 'Shougo/neocomplcache.vim'          "note: this plugin automatically presses esc
-"Plugin 'altercation/vim-colors-solarized'   "color scheme which is not used in linux
+"Plugin 'altercation/vim-colors-solarized'  "color scheme which is not used in linux
 Plugin 'brookhong/cscope.vim'               "this plugin helps find definition
 Plugin 'szw/vim-tags'                       "automatically find tags
 Plugin 'vim-scripts/drawit'                 "draw visio in vim
@@ -33,6 +33,7 @@ Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</
 "Plugin 'godlygeek/tabular'                 "prerequisite for vim-markdown
 "Plugin 'plasticboy/vim-markdown'           "markdown plugin.. little use
 Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words using &|!, if contain ', using ''
+Plugin 'junegunn/vim-easy-align'            "Plugin to align easily using gaip
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
