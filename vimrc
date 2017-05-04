@@ -187,7 +187,7 @@ nnoremap <leader>j ::<C-r>=line('.')<CR>!python -m json.tool<CR>
 nnoremap <leader>u :call clearmatches()<CR>
 "see vim.wikia.com/wiki/Highlight_long_lines
 nnoremap <leader>C :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> :!cscope -b -i cscope.files -f cscope.out<CR> :cs kill -1<CR>:cs add cscope.out<CR> :call CscopeUpdateDB()<CR> :CCTreeLoadDB<CR><CR>
-nnoremap <leader>m :!man 2 <C-R><C-W><CR><CR>
+nnoremap <leader>m :!man <C-R><C-W><CR><CR>
 "current word
 nnoremap <leader>b :BoolPat 
 
