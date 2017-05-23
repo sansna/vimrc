@@ -21,7 +21,7 @@ Plugin 'scrooloose/nerdtree'                "filesystem explorer
 "Plugin 'Shougo/neocomplcache.vim'          "note: this plugin automatically presses esc
 "Plugin 'altercation/vim-colors-solarized'  "color scheme which is not used in linux
 Plugin 'brookhong/cscope.vim'               "this plugin helps find definition
-Plugin 'szw/vim-tags'                       "automatically find tags
+"Plugin 'szw/vim-tags'                       "automatically find tags "sometimes tags file becomes too large, disable this to prevent truncating of tags file.
 Plugin 'vim-scripts/drawit'                 "draw visio in vim
 Plugin 'vim-scripts/taglist.vim'            "right window: code preview
 Plugin 'vim-scripts/a.vim'                  "switching between .h .c
