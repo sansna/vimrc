@@ -191,6 +191,9 @@ nnoremap <leader>m :!man <C-R><C-W><CR><CR>
 "current word
 nnoremap <leader>b :BoolPat 
 
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 let g:Tlist_Auto_Highlight_Tag = 1              "taglist configuration
 let g:Tlist_Tlist_Close_On_Select = 1
 let g:Tlist_Compact_Format = 1
