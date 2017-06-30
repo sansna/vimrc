@@ -60,7 +60,9 @@ let g:lua_complete_omni = 1                                         "opens autoc
 set t_Co=256						"sets terminal color
 set backspace=2					"enable backspace
 set smartindent						"indentation
-set expandtab						"tab replaced by spaces, if need to change all the previously entered tabs to spaces, :retab might help
+set cindent
+set cinoptions=(0,u0,U0             "the previous 2 lines makes expressions span multi lines to align begining of lines to align with the beginning of the expression, note this should be used while :set noexpandtab
+"set expandtab						"tab replaced by spaces, if need to change all the previously entered tabs to spaces, :retab might help, if want indentation with tabs other than spaces, use :set noet, or simply delete this line
 set tabstop=4						"defines how many spaces are inserted if press one tab
 set shiftwidth=4					"number of spaces used when indentation occurs
 set showtabline=0 					"This turns off the tab line even when there are plural tabs in a single window.
