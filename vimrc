@@ -253,3 +253,8 @@ au FileType c,cpp,h,hpp,cxx call SetCCPPOptions()
 function SetCCPPOptions()
     set nofoldenable
 endfunction
+"haskell scripts
+au FileType haskell call SetHSOptions()
+function SetHSOptions()
+	set et
+endfunction
