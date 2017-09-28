@@ -177,6 +177,8 @@ nnoremap <leader>fa :call CscopeUpdateDB()<CR> :call CscopeFindInteractive(expan
 nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
 nnoremap <leader>fd :call CscopeFind('g',expand('<cword>'))<CR>
 nnoremap <leader>w :set wrap!<CR>
+"to wrap as file format, first set textwidth=num, then type gp<position>, or
+"type *gp* under vision select mode
 nnoremap <leader>f :UpdateTypesFileOnly<CR>
 " Starting the function/class name coloring. Need universal-ctags to gen tags
 "+ file before.
