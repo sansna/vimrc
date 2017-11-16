@@ -34,6 +34,7 @@ Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</
 "Plugin 'plasticboy/vim-markdown'           "markdown plugin.. little use
 Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words using &|!, if contain ', using ''
 Plugin 'junegunn/vim-easy-align'            "Plugin to align easily using gaip
+Plugin 'mattn/emmet-vim'                    "Plugin to write html/css easily
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -235,6 +236,11 @@ function SetGOOptions()
     nmap <Leader>i <Plug>(go-info)
     nmap <Leader>e <Plug>(go-rename)
 endfunction
+
+"emmet-vim conf
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<C-M>'
 
 "CCTree Cfg
 let CCTreeDbFileMaxSize=1000000000
