@@ -34,7 +34,7 @@ Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</
 "Plugin 'plasticboy/vim-markdown'           "markdown plugin.. little use
 Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words using &|!, if contain ', using ''
 Plugin 'junegunn/vim-easy-align'            "Plugin to align easily using gaip
-Plugin 'mattn/emmet-vim'                    "Plugin to write html/css easily
+Plugin 'mattn/emmet-vim'                    "Plugin to write html/css easily, see Tutorial. notes: select lines, <C-M>, and type: div#div>p#p$* #=id, $=idx, * means branching
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
