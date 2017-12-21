@@ -164,7 +164,7 @@ let mapleader=","					"define <leader> as ','
 "nnoremap <leader>cl :let __line=<C-r>=line('.')<CR><CR>:let __col=<C-r>=col('.')<CR><CR>:Limelight!<CR>:cal cursor(__line,__col)<CR>:unlet __col<CR>:unlet __line<CR>
 "turn limelight off
 nnoremap <leader>g gg=G
-nnoremap <leader>l //g<CR>jzt:nohl<CR>
+nnoremap <leader>l /<CR>jzt:nohl<CR>
 nnoremap <leader>L ?<CR>njzt:nohl<CR>
 nnoremap <leader>v :68vs<CR>
 nnoremap <leader>s :15sp<CR>
