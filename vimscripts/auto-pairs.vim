@@ -559,4 +559,4 @@ inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>
 imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn
 
 
-au BufEnter * :call AutoPairsTryInit()
+call AutoPairsTryInit()
