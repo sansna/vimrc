@@ -35,6 +35,7 @@ Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</
 Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words using &|!, if contain ', using ''
 Plugin 'junegunn/vim-easy-align'            "Plugin to align easily using gaip
 Plugin 'mattn/emmet-vim'                    "Plugin to write html/css easily, see Tutorial. notes: select lines, <C-M>, and type: div#div>p#p$* #=id, $=idx, * means branching
+Plugin 'pangloss/vim-javascript'			"js indentation
 
 noremap <c-k> <c-w>k				"split windows inter-switch
 noremap <c-j> <c-w>j
@@ -241,6 +242,28 @@ endfunction
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-M>'
+
+"vim-js conf
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+augroup javascript_folding
+	au!
+	au FileType javascript setlocal foldmethod=syntax
+augroup END
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+set conceallevel=1
 
 "CCTree Cfg
 let CCTreeDbFileMaxSize=1000000000
