@@ -187,6 +187,8 @@ nnoremap <leader>f :UpdateTypesFileOnly<CR>
 nnoremap <leader>i :set nu!<CR>
 nnoremap <leader>o :set foldenable!<CR>
 nnoremap <leader>p :set relativenumber!<CR>
+nnoremap <leader>e :set et<CR>:retab<CR>
+nnoremap <leader>E :set noet<CR>:retab!<CR>
 nnoremap <leader>a :A<CR>
 nnoremap <leader>j ::<C-r>=line('.')<CR>!python -m json.tool<CR>
 "json expansion for current line. using u to go back
