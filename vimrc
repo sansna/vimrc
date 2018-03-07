@@ -169,7 +169,7 @@ nnoremap <leader>l /<CR>jzt:nohl<CR>
 nnoremap <leader>L ?<CR>njzt:nohl<CR>
 nnoremap <leader>v :68vs<CR>
 nnoremap <leader>s :15sp<CR>
-nnoremap <leader>S :w !sudo tee %<CR>
+nnoremap <leader>S :w !sudo tee % 2>&1 1>/dev/null<CR>
 nnoremap <leader>n :NERDTree<CR>
 "open nerdtree explorer
 nnoremap <leader>r :vertical resize 68<CR>
