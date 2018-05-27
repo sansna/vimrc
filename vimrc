@@ -59,6 +59,7 @@ let g:lua_complete_omni = 1                                         "opens autoc
 "let g:lua_interpreter_path='/path/to/lua'                           "if installed lua somewhere else and not connected to vim, specify it.
 "let g:lua_internal = 0                                              "if not wish to use the interface connected to vim, set this to 0, and set the above line correctly
 "let g:lua_omni_blacklist=['somefolder\somemodule','another']        "this can block some modules at omni complete time
+set t_ti= t_te=														"this preserves vim contents after exit.
 set t_Co=256						"sets terminal color
 set backspace=2					"enable backspace
 set cindent
