@@ -1,4 +1,6 @@
 set nocompatible					"needed by Vundle.vim
+set foldcolumn=0					"foldcolumn diables by default"
+set diffopt=foldcolumn:2			"except for vimdiff mode
 filetype off						"needed by Vundle.vim, after initialization of vundle, this value can be changed by filetype plugin on
 set path+=/usr/include
 set tags=tags;                              "find the tags recursively upward
