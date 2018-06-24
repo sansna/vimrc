@@ -126,6 +126,7 @@ set fileformats=unix,dos,mac				"set file format it supports
 source $VIMRUNTIME/delmenu.vim			"things needed to clear welcome screen
 source $VIMRUNTIME/menu.vim			"things needed to clear welcome screen
 "language messages zh_CN.utf-8				"status bar and more, infos are able to be displayed in zh_CN
+highlight! link DiffText MatchParen
 
 nnoremap <c-s> :w<CR>
 "for more info about certain shortcut, use :verbose map <c-s>
