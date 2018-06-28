@@ -134,6 +134,8 @@ nnoremap <c-s> :w<CR>
 "for more info about certain shortcut, use :verbose map <c-s>
 inoremap <c-c> <ESC>
 "shortcut for esc
+inoremap jk <ESC>
+"according to ycm's readme, using c-c is harmful to exit insert mode.
 vnoremap // y/<C-r>"<CR>N
 "under visual selection search
 nnoremap <c-c> :nohl<CR>:pclose<CR>
