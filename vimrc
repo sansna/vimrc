@@ -203,7 +203,7 @@ nnoremap <leader>u :call clearmatches()<CR>
 nnoremap <leader>C :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> :!cscope -b -i cscope.files -f cscope.out<CR> :cs kill -1<CR>:cs add cscope.out<CR> :call CscopeUpdateDB()<CR> :CCTreeLoadDB<CR><CR>
 nnoremap <leader>m :!man <C-R><C-W><CR><CR>
 "current word
-nnoremap <leader>b :BoolPat 
+nnoremap <leader>bp :BoolPat 
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
