@@ -1,11 +1,11 @@
-set nocompatible					"needed by Vundle.vim
-set foldcolumn=0					"foldcolumn diables by default"
-set diffopt=foldcolumn:2			"except for vimdiff mode
-filetype off						"needed by Vundle.vim, after initialization of vundle, this value can be changed by filetype plugin on
+set nocompatible                    "needed by Vundle.vim
+set foldcolumn=0                    "foldcolumn diables by default"
+set diffopt=foldcolumn:2            "except for vimdiff mode
+filetype off                        "needed by Vundle.vim, after initialization of vundle, this value can be changed by filetype plugin on
 set path+=/usr/include
 set tags=tags;                              "find the tags recursively upward
 
-set rtp+=$VIM/vimfiles/bundle/Vundle.vim/		"set CWD for Vundle.vim Plugin
+set rtp+=$VIM/vimfiles/bundle/Vundle.vim/       "set CWD for Vundle.vim Plugin
 call vundle#rc('$VIM/vimfiles/bundle/')     "set CWD for all other Plugins
 
 Plugin 'VundleVim/Vundle.vim'               "Manage plugins
@@ -15,15 +15,15 @@ Plugin 'Lokaltog/vim-powerline'             "powerful status line
 Plugin 'wesleyche/SrcExpl'                  "not frequently used, source insight like
 Plugin 'junegunn/limelight.vim'             "to be more focused
 Plugin 'sickill/vim-pasta'                  "paste things beautifully with p
-Plugin 'scrooloose/syntastic'               "check syntastic of c/c++, before compile
+"Plugin 'vim-syntastic/syntastic'            "statically check syntastic of c/c++, before compile, turn it off while using ycm.
 Plugin 'xuhdev/SingleCompile'               "compile, run with one key press
-Plugin 'Valloric/YouCompleteMe', {'do':'./install.py'}	" auto completion
-Plugin 'chriskempson/base16-vim'			"color scheme of vim. In linux, let's install screen
+Plugin 'Valloric/YouCompleteMe', {'do':'./install.py'}  " auto completion
+Plugin 'chriskempson/base16-vim'            "color scheme of vim. In linux, let's install screen
 Plugin 'scrooloose/nerdtree'                "filesystem explorer
 "Plugin 'Shougo/neocomplcache.vim'          "note: this plugin automatically presses esc
 "Plugin 'altercation/vim-colors-solarized'  "color scheme which is not used in linux
 Plugin 'brookhong/cscope.vim'               "this plugin helps find definition
-"Plugin 'szw/vim-tags'                       "automatically find tags "sometimes tags file becomes too large, disable this to prevent truncating of tags file.
+"Plugin 'szw/vim-tags'                       "automatically find tags, sometimes tags file becomes too large, disable this to prevent truncating of tags file.
 Plugin 'vim-scripts/drawit'                 "draw visio in vim
 Plugin 'vim-scripts/taglist.vim'            "right window: code preview
 Plugin 'vim-scripts/a.vim'                  "switching between .h .c
@@ -37,21 +37,21 @@ Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</
 Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words using &|!, if contain ', using ''
 Plugin 'junegunn/vim-easy-align'            "Plugin to align easily using gaip
 Plugin 'mattn/emmet-vim'                    "Plugin to write html/css easily, see Tutorial. notes: select lines, <C-M>, and type: div#div>p#p$* #=id, $=idx, * means branching
-Plugin 'pangloss/vim-javascript'			"js indentation
+Plugin 'pangloss/vim-javascript'            "js indentation
 
-noremap <c-k> <c-w>k				"split windows inter-switch
+noremap <c-k> <c-w>k                "split windows inter-switch
 noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
-syntax on						"let vim color the code
-filetype on						"let vim check file type by ext.
-filetype plugin on					"automatically detects file type using filetype plugin, and use plugin supported for this file type
-filetype plugin indent on				"turns on filetype detection, and sets different tab settings after detection done
-let g:ycm_auto_trigger = 1				"let ycm trigger automatically
-let g:ycm_min_num_of_chars_for_completion = 2		"set ycm to start completion with at least 2 letters
+syntax on                                   "let vim color the code
+filetype on                                 "let vim check file type by ext.
+filetype plugin on                          "automatically detects file type using filetype plugin, and use plugin supported for this file type
+filetype plugin indent on                   "turns on filetype detection, and sets different tab settings after detection done
+let g:ycm_auto_trigger = 1                  "let ycm trigger automatically
+let g:ycm_min_num_of_chars_for_completion = 2       "set ycm to start completion with at least 2 letters
 let g:ycm_global_ycm_extra_conf = '$VIM/vimfiles/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'  "this should be specified after succesfully compiled ycm
-let g:ycm_add_preview_to_completeopt=1  "display the scratch window
+let g:ycm_add_preview_to_completeopt=1      "display the scratch window
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:ycm_server_python_interpreter='/usr/bin/python2'              "in archlinux, where python= python3, ycm may be built in python2, but loading python as python3.. so this should be pointed out.
@@ -61,23 +61,23 @@ let g:lua_complete_omni = 1                                         "opens autoc
 "let g:lua_interpreter_path='/path/to/lua'                           "if installed lua somewhere else and not connected to vim, specify it.
 "let g:lua_internal = 0                                              "if not wish to use the interface connected to vim, set this to 0, and set the above line correctly
 "let g:lua_omni_blacklist=['somefolder\somemodule','another']        "this can block some modules at omni complete time
-set t_ti= t_te=														"this preserves vim contents after exit.
-set t_Co=256						"sets terminal color
-set backspace=2					"enable backspace
+set t_ti= t_te=                                                     "this preserves vim contents after exit.
+set t_Co=256                        "sets terminal color
+set backspace=2                 "enable backspace
 set cindent
 set cinoptions=(0,u0,U0             "the previous 2 lines makes expressions span multi lines to align begining of lines to align with the beginning of the expression, note this should be used while :set noexpandtab
-"set smartindent					"indentation, automatically add more indent to the next block of file, not be set with cindent generally.
-"set expandtab						"tab replaced by spaces, if need to change all the previously entered tabs to spaces, :retab might help, if want indentation with tabs other than spaces, use :set noet, or simply delete this line
-set tabstop=4						"defines how many spaces are inserted if press one tab
-set shiftwidth=4					"number of spaces used when indentation occurs
-set showtabline=0 					"This turns off the tab line even when there are plural tabs in a single window.
-"set smarttab						"if at the line start, tab is interpreted as shiftwidth, otherwise tabstop
-set foldenable						"open file with its content folded
-set foldmethod=indent					"set the way file is folded
-set autoread						"file changed if run, it will be reloaded in vim
-set ignorecase						"ignore cases when using / to find strings
-set smartcase						"ignore cases when no upper case
-autocmd InsertLeave * :pclose				"leaving insert mode will trigger a :pclose which closes scratch window
+"set smartindent                    "indentation, automatically add more indent to the next block of file, not be set with cindent generally.
+"set expandtab                      "tab replaced by spaces, if need to change all the previously entered tabs to spaces, :retab might help, if want indentation with tabs other than spaces, use :set noet, or simply delete this line
+set tabstop=4                       "defines how many spaces are inserted if press one tab
+set shiftwidth=4                    "number of spaces used when indentation occurs
+set showtabline=0                   "This turns off the tab line even when there are plural tabs in a single window.
+"set smarttab                       "if at the line start, tab is interpreted as shiftwidth, otherwise tabstop
+set foldenable                      "open file with its content folded
+set foldmethod=indent                   "set the way file is folded
+set autoread                        "file changed if run, it will be reloaded in vim
+set ignorecase                      "ignore cases when using / to find strings
+set smartcase                       "ignore cases when no upper case
+autocmd InsertLeave * :pclose               "leaving insert mode will trigger a :pclose which closes scratch window
 autocmd InsertLeave * :let __line=line('.')
 autocmd InsertLeave * :let __col=col('.')
 autocmd InsertLeave * :Limelight!
@@ -86,7 +86,7 @@ autocmd InsertLeave * :unlet __col
 autocmd InsertLeave * :unlet __line
 "limelight relight
 "leaving insert mode will trigger
-autocmd InsertEnter * :Limelight				"entering insert mode will trigger
+autocmd InsertEnter * :Limelight                "entering insert mode will trigger
 au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 79 . 'v.\+', -1)
 autocmd VimEnter * call Read_CTreeXRefDB()
 function Read_CTreeXRefDB()
@@ -95,18 +95,18 @@ function Read_CTreeXRefDB()
     endif
 endfunction 
 
-imap <c-k> <Up>					"insert mode ctrl+k means moving cursor up
+imap <c-k> <Up>                 "insert mode ctrl+k means moving cursor up
 imap <c-j> <Down>
 imap <c-h> <Left>
 imap <c-l> <Right>
 
 set hlsearch
-set nu							"show line number
+set nu                          "show line number
 set relativenumber              "show relative number instead
-set laststatus=2						"last status height set to 2
-set cmdheight=2					"if cmdheight is gt 2, messages will be displayed on last line
-set cursorline						"highlight the whole line where cursor is
-set nowrap						"show long line in one line, if want to show in multiple lines, set wrap
+set laststatus=2                        "last status height set to 2
+set cmdheight=2                 "if cmdheight is gt 2, messages will be displayed on last line
+set cursorline                      "highlight the whole line where cursor is
+set nowrap                      "show long line in one line, if want to show in multiple lines, set wrap
 set background=dark
 
 "Needed for base16-color-scheme in linux
@@ -115,19 +115,19 @@ if filereadable(expand("~/.vimrc_background"))
     source ~/.vimrc_background
 endif
 "colorscheme base16-twilight         "specify color scheme, not needed any more if using base16-shell
-set shortmess=atI					"disable welcome screen
-set guioptions-=m					"disable menu
-set guioptions-=T					"disable tools
-set guioptions-=r					"disable scroll bar
-set guioptions-=L					"disable .. not sure
-set encoding=utf-8					"set vim encoding in utf-8
-set fenc=utf-8						"set file encoding in utf-8
-set fileencodings=utf-8,latin-1,ascii,gbk,usc-bom,cp936,Shift-JIS	"set several file encodings to be supported
-set ff=unix						"set file format, it affects \n
-set fileformats=unix,dos,mac				"set file format it supports
-source $VIMRUNTIME/delmenu.vim			"things needed to clear welcome screen
-source $VIMRUNTIME/menu.vim			"things needed to clear welcome screen
-"language messages zh_CN.utf-8				"status bar and more, infos are able to be displayed in zh_CN
+set shortmess=atI                   "disable welcome screen
+set guioptions-=m                   "disable menu
+set guioptions-=T                   "disable tools
+set guioptions-=r                   "disable scroll bar
+set guioptions-=L                   "disable .. not sure
+set encoding=utf-8                  "set vim encoding in utf-8
+set fenc=utf-8                      "set file encoding in utf-8
+set fileencodings=utf-8,latin-1,ascii,gbk,usc-bom,cp936,Shift-JIS   "set several file encodings to be supported
+set ff=unix                     "set file format, it affects \n
+set fileformats=unix,dos,mac                "set file format it supports
+source $VIMRUNTIME/delmenu.vim          "things needed to clear welcome screen
+source $VIMRUNTIME/menu.vim         "things needed to clear welcome screen
+"language messages zh_CN.utf-8              "status bar and more, infos are able to be displayed in zh_CN
 highlight! link DiffText MatchParen
 
 nnoremap <c-s> :w<CR>
@@ -149,7 +149,7 @@ nnoremap <c-F10> :SCCompileRun<CR>
 nnoremap <c-F11> :SCChooseCompiler<CR>
 "shortcut for changing compiler
 nnoremap <c-x> :CCTreeSaveXRefDB cctree.out<CR>
-let g:ycm_min_num_identifier_candidate_chars = 2	"ycm identifier at least requires 2 letters
+let g:ycm_min_num_identifier_candidate_chars = 2    "ycm identifier at least requires 2 letters
 let g:neocomplcache_enable_at_startup=1
 let g:cscope_silent = 1
 let g:NERDTreeIgnore=['\.o$','\.lo$']
@@ -166,8 +166,8 @@ let g:ycm_semantic_triggers =  {
   \   'ruby' : ['.', '::'],
   \   'lua' : ['.', ':','re!\w+'],
   \   'erlang' : [':'],
-  \ }							"ycm conditions for completion according to different languages
-let mapleader=","					"define <leader> as ','
+  \ }                           "ycm conditions for completion according to different languages
+let mapleader=","                   "define <leader> as ','
 "nnoremap <leader>cl :let __line=<C-r>=line('.')<CR><CR>:let __col=<C-r>=col('.')<CR><CR>:Limelight!<CR>:cal cursor(__line,__col)<CR>:unlet __col<CR>:unlet __line<CR>
 "turn limelight off
 nnoremap <leader>g gg=G
@@ -256,8 +256,8 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 augroup javascript_folding
-	au!
-	au FileType javascript setlocal foldmethod=syntax
+    au!
+    au FileType javascript setlocal foldmethod=syntax
 augroup END
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
@@ -293,5 +293,5 @@ endfunction
 "haskell scripts
 au FileType haskell call SetHSOptions()
 function SetHSOptions()
-	set et
+    set et
 endfunction

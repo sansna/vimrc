@@ -52,14 +52,14 @@ flags = [
 '-DNDEBUG',
 # You 100% do NOT need -DUSE_CLANG_COMPLETER and/or -DYCM_EXPORT in your flags;
 # only the YCM source code needs it.
-'-DUSE_CLANG_COMPLETER',
-'-DYCM_EXPORT=',
+#'-DUSE_CLANG_COMPLETER',
+#'-DYCM_EXPORT=',
 # THIS IS IMPORTANT! Without the '-x' flag, Clang won't know which language to
 # use when compiling headers. So it will guess. Badly. So C++ headers will be
 # compiled as C headers. You don't want that so ALWAYS specify the '-x' flag.
 # For a C project, you would set this to 'c' instead of 'c++'.
 '-x',
-'c++',
+'c',
 '-isystem',
 'cpp/pybind11',
 '-isystem',
@@ -84,16 +84,24 @@ get_python_inc(),
 'cpp/ycm/tests/gmock/include',
 '-isystem',
 'cpp/ycm/benchmarks/benchmark/include',
+'-isystem',
+'/usr/include'
 ]
 
-# If folders are ended with slash, only subfolders are cnosidered to
-# be included into flags, otherwise the specified folder is also
-# included.
-# Also note the directories added here will also be passed
-# to compiler, such as gcc -Idir, so that the files can be included
-# directly in the form of #include <example.h>.
+# note -isystem is used against system/vendor 
+# headers, -I is used against self provided headers.
+# According to StackOverflow,
+#[https://stackoverflow.com/questions/2579576/i-dir-vs-isystem-dir#answer-2590764]
+# if provided headers with isystem, gcc will not prompt
+# warning against these files. Otherwise -I is same as -isystem.
+# Ycm uses the flags to compile supplied files on the edit, and
+# show compiling errors with file. Thus the syntastic static checker
+# can be turned off.
+# No matter folders are with slash or not, folders
+# listed here will be linked to as -I<subfolder>. Where
+# 'subfolder' are folders inside the folder specified.
 flagsRec=[
-        '/usr/include',
+#        '/some/self/written/include',
         ]
 excludeRecurDirs = set(['.git', '.svn', '.config'])
 def AddDirsRecursively( flagsRec ):
@@ -115,8 +123,10 @@ AddDirsRecursively( flagsRec )
 # Clang automatically sets the '-std=' flag to 'c++14' for MSVC 2015 or later,
 # which is required for compiling the standard library, and to 'c++11' for older
 # versions.
-if platform.system() != 'Windows':
-  flags.append( '-std=c++11' )
+#if platform.system() != 'Windows':
+#  flags.append( '-std=c++11' )
+# According to stackoverflow, kernel sources use gnu89 std.
+flags.append( '-std=gnu89' )
 
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
