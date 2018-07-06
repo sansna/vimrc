@@ -276,22 +276,31 @@ set conceallevel=1
 "CCTree Cfg
 let CCTreeDbFileMaxSize=1000000000
 
-"markdown scripts
-au FileType md call SetMDOptions()
-au FileType markdown call SetMDOptions()
+function SetET()
+    set et
+    retab
+endfunction
+function SetNoET()
+    set noet
+    retab
+endfunction
+function SetCCPPOptions()
+    set nofoldenable
+    call SetNoET()
+endfunction
 function SetMDOptions()
     set conceallevel=2
     set nofoldenable
     set wrap
     nnoremap <c-g> :%!/usr/local/bin/mdlinks<CR>
+    call SetET()
 endfunction
+
+"markdown scripts
+au FileType md call SetMDOptions()
+au FileType markdown call SetMDOptions()
+au FileType sh,vim call SetET()
 "c/cpp scripts
 au FileType c,cpp,h,hpp,cxx call SetCCPPOptions()
-function SetCCPPOptions()
-    set nofoldenable
-endfunction
 "haskell scripts
-au FileType haskell call SetHSOptions()
-function SetHSOptions()
-    set et
-endfunction
+au FileType haskell call SetET()
