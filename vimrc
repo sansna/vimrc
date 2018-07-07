@@ -30,7 +30,8 @@ Plugin 'vim-scripts/a.vim'                  "switching between .h .c
 Plugin 'xolox/vim-misc'                     "pre-requisite of lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'             "the lua-ftplugin
 Plugin 'vim-scripts/TagHighlight'           "The func/class name coloring for several languages
-Plugin 'fatih/vim-go'                       "The go-code completer
+"Any github repos should be using `go get github.com/..` other than gt.
+Plugin 'fatih/vim-go'                       "The go-code completer, before doing anything, install related packages via <leader>gi.
 Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</>>,c-p,<c-\--/=>, before using it, :CCTreeLoadDB<CR>, or <leader>C
 "Plugin 'godlygeek/tabular'                 "prerequisite for vim-markdown
 "Plugin 'plasticboy/vim-markdown'           "markdown plugin.. little use
@@ -231,6 +232,7 @@ let g:Tlist_WinHeight = 12
 "Golang Short-cuts
 au FileType go call SetGOOptions()
 function SetGOOptions()
+    nmap <leader>gi :GoInstallBinaries
     nmap <leader>r <Plug>(go-run)
     nmap <leader>b <Plug>(go-build)
     nmap <leader>t <Plug>(go-test)
