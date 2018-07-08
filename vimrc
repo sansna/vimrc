@@ -205,6 +205,7 @@ nnoremap <leader>C :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -i
 nnoremap <leader>m :!man <C-R><C-W><CR><CR>
 "current word
 nnoremap <leader>bp :BoolPat 
+nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -294,6 +295,8 @@ function SetMDOptions()
     set conceallevel=2
     set nofoldenable
     set wrap
+    "disables autoindent for current content.
+    setl noai nocin nosi inde=
     nnoremap <c-g> :%!/usr/local/bin/mdlinks<CR>
     call SetET()
 endfunction
@@ -306,3 +309,4 @@ au FileType sh,vim call SetET()
 au FileType c,cpp,h,hpp,cxx call SetCCPPOptions()
 "haskell scripts
 au FileType haskell call SetET()
+au FileType text setl noai nocin nosi inde=
