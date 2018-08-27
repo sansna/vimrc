@@ -300,6 +300,9 @@ function SetMDOptions()
     nnoremap <c-g> :%!/usr/local/bin/mdlinks<CR>
     call SetET()
 endfunction
+function SetSTPOptions()
+    set sw=2 ts=8 cino=>4,n-2,{2,^-2,t0,(0,u0,w1,M1
+endfunction
 
 "markdown scripts
 au FileType md call SetMDOptions()
@@ -310,3 +313,5 @@ au FileType c,cpp,h,hpp,cxx call SetCCPPOptions()
 "haskell scripts
 au FileType haskell call SetET()
 au FileType text setl noai nocin nosi inde=
+"stap scripts
+au FileType stp call SetSTPOptions()
