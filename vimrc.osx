@@ -280,6 +280,7 @@ function SetGOOptions()
         \ 'ctagsbin'  : 'gotags',
         \ 'ctagsargs' : '-sort -silent'
     \ }
+    nnoremap <leader>S :GoFmt<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>
 endfunction
 
 "emmet-vim conf
