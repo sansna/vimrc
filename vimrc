@@ -176,7 +176,7 @@ nnoremap <leader>l /<CR>jzt:nohl<CR>
 nnoremap <leader>L ?<CR>njzt:nohl<CR>
 nnoremap <leader>v :68vs<CR>
 nnoremap <leader>s :15sp<CR>
-nnoremap <leader>S :w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>
+nnoremap <leader>S :let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>
 nnoremap <leader>n :NERDTree<CR>
 "open nerdtree explorer
 nnoremap <leader>r :vertical resize 68<CR>
@@ -249,7 +249,7 @@ function SetGOOptions()
     nmap <Leader>e <Plug>(go-rename)
     "tagbar setting
     nnoremap <leader>t :TagbarToggle<CR>
-    nnoremap <leader>S :GoFmt<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>
+    nnoremap <leader>S :GoFmt<CR>:let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>
 endfunction
 
 "emmet-vim conf
