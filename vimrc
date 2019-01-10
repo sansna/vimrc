@@ -176,7 +176,7 @@ nnoremap <leader>l /<CR>jzt:nohl<CR>
 nnoremap <leader>L ?<CR>njzt:nohl<CR>
 nnoremap <leader>v :68vs<CR>
 nnoremap <leader>s :15sp<CR>
-nnoremap <leader>S :w !sudo tee % 2>&1 1>/dev/null<CR>
+nnoremap <leader>S :w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>
 nnoremap <leader>n :NERDTree<CR>
 "open nerdtree explorer
 nnoremap <leader>r :vertical resize 68<CR>
@@ -236,17 +236,20 @@ function SetGOOptions()
     nmap <leader>gi :GoInstallBinaries
     nmap <leader>r <Plug>(go-run)
     nmap <leader>b <Plug>(go-build)
-    nmap <leader>t <Plug>(go-test)
+    "nmap <leader>t <Plug>(go-test)
     nmap <leader>c <Plug>(go-coverage)
     nmap <Leader>ds <Plug>(go-def-split)
     nmap <Leader>dv <Plug>(go-def-vertical)
     nmap <Leader>dt <Plug>(go-def-tab)
-    nmap <Leader>gd <Plug>(go-doc)
+    nmap <Leader>gc <Plug>(go-doc)
     nmap <Leader>gv <Plug>(go-doc-vertical)
     nmap <Leader>gb <Plug>(go-doc-browser)
     nmap <Leader>s <Plug>(go-implements)
     nmap <Leader>i <Plug>(go-info)
     nmap <Leader>e <Plug>(go-rename)
+    "tagbar setting
+    nnoremap <leader>t :TagbarToggle<CR>
+    nnoremap <leader>S :GoFmt<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>
 endfunction
 
 "emmet-vim conf
@@ -315,3 +318,30 @@ au FileType haskell call SetET()
 au FileType text setl noai nocin nosi inde=
 "stap scripts
 au FileType stp call SetSTPOptions()
+let g:tagbar_type_go = {
+            \ 'ctagstype' : 'go',
+            \ 'kinds'     : [
+            \ 'p:package',
+            \ 'i:imports:1',
+            \ 'c:constants',
+            \ 'v:variables',
+            \ 't:types',
+            \ 'n:interfaces',
+            \ 'w:fields',
+            \ 'e:embedded',
+            \ 'm:methods',
+            \ 'r:constructor',
+            \ 'f:functions'
+            \ ],
+            \ 'sro' : '.',
+            \ 'kind2scope' : {
+            \ 't' : 'ctype',
+            \ 'n' : 'ntype'
+            \ },
+            \ 'scope2kind' : {
+            \ 'ctype' : 't',
+            \ 'ntype' : 'n'
+            \ },
+            \ 'ctagsbin'  : 'gotags',
+            \ 'ctagsargs' : '-sort -silent'
+            \ }
