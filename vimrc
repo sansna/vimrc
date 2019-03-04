@@ -33,7 +33,7 @@ Plugin 'vim-scripts/TagHighlight'           "The func/class name coloring for se
 "Any github repos should be using `go get github.com/..` other than gt.
 Plugin 'fatih/vim-go'                       "The go-code completer, before doing anything, install related packages via <leader>gi.
 Plugin 'hari-rangarajan/CCTree'             "Call Tree View, short-cuts: <c-\-</>>,c-p,<c-\--/=>, before using it, :CCTreeLoadDB<CR>, or <leader>C
-"Plugin 'godlygeek/tabular'                 "prerequisite for vim-markdown
+Plugin 'godlygeek/tabular'                  "prerequisite for vim-markdown, align with :Tabularize /\t<CR>
 "Plugin 'plasticboy/vim-markdown'           "markdown plugin.. little use
 Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words using &|!, if contain ', using ''
 Plugin 'junegunn/vim-easy-align'            "Plugin to align easily using gaip
