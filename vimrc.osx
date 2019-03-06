@@ -6,6 +6,7 @@ set path+=/usr/include
 "set path+=$GOROOT/src
 set path+=/Users/zuiyou/GO/src
 set tags=tags;                              "find the tags recursively upward
+set viminfo='100,<1000,s100,h               "visited 100 places in file be remembered; 1000 lines be saved for each register/copy/paste; register more than 100KB of text be skipped; disables highlight when starts vim.
 
 set rtp+=/Users/zuiyou/GitRepo/Vundlevim/Vundle.vim/       "set CWD for Vundle.vim Plugin
 call vundle#rc('/Users/zuiyou/GitRepo/')     "set CWD for all other Plugins

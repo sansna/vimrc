@@ -4,6 +4,7 @@ set diffopt=foldcolumn:2            "except for vimdiff mode
 filetype off                        "needed by Vundle.vim, after initialization of vundle, this value can be changed by filetype plugin on
 set path+=/usr/include
 set tags=tags;                              "find the tags recursively upward
+set viminfo='100,<1000,s100,h               "visited 100 places in file be remembered; 1000 lines be saved for each register/copy/paste; register more than 100KB of text be skipped; disables highlight when starts vim.
 
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/       "set CWD for Vundle.vim Plugin
 call vundle#rc('$VIM/vimfiles/bundle/')     "set CWD for all other Plugins
