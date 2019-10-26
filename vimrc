@@ -165,7 +165,7 @@ let g:ycm_semantic_triggers =  {
   \   'perl' : ['->'],
   \   'php' : ['->', '::'],
   \   'cs,java,javascript,typescript,d,perl6,scala,vb,elixir,go' : ['.', 're!\w+'],
-  \   'ruby' : ['.', '::'],
+  \   'ruby' : ['.', '::', 're!\w+'],
   \   'lua' : ['.', ':','re!\w+'],
   \   'erlang' : [':'],
   \ }                           "ycm conditions for completion according to different languages
