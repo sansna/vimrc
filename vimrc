@@ -231,6 +231,15 @@ let g:Tlist_Use_SingleClick = 1
 let g:Tlist_WinWidth = 32
 let g:Tlist_WinHeight = 12
 
+" more language can be supported
+let g:ycm_language_server = [
+  \   {
+  \     'name': 'ruby',
+  \     'cmdline': [ expand( '$HOME/GitRepo/ycm-core/lsp-examples/ruby/bin/solargraph' ), 'stdio' ],
+  \     'filetypes': [ 'ruby' ],
+  \   },
+  \ ]
+
 "Golang Short-cuts
 au FileType go call SetGOOptions()
 function SetGOOptions()
