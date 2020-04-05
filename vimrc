@@ -242,6 +242,7 @@ let g:ycm_language_server = [
 
 "Golang Short-cuts
 au FileType go call SetGOOptions()
+au FileType python call SetPYOptions()
 function SetGOOptions()
     nmap <leader>gi :GoInstallBinaries
     nmap <leader>r <Plug>(go-run)
@@ -260,6 +261,10 @@ function SetGOOptions()
     "tagbar setting
     nnoremap <leader>t :TagbarToggle<CR>
     nnoremap <leader>S :GoFmt<CR>:let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>
+endfunction
+
+function SetPYOptions()
+    nnoremap <leader>S :!python %<CR>:!rm %c<CR>:let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>
 endfunction
 
 "emmet-vim conf
