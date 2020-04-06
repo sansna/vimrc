@@ -188,6 +188,7 @@ nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>r :vertical resize 68<CR>
 "resizes split window
 "nnoremap <leader>t :TlistOpen<CR>
+nnoremap <leader>F :FormatCode<CR>
 nnoremap <leader>fa :call CscopeUpdateDB()<CR> :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>fs :call CscopeFind('s',expand('<cword>'))<CR>
 nnoremap <leader>fd :call CscopeFind('g',expand('<cword>'))<CR>
