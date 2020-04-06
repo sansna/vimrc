@@ -364,6 +364,10 @@ let g:tagbar_type_go = {
 
 "Create file from Templates.
 function AddTemplate(tmpl_file)
+    "let fully_qualified_file = expand('%:p')
+    "if 0 != match(fully_qualified_file, $HOME . '/project/.*')
+    "    return
+    "endif
     exe "0read " . a:tmpl_file
     let substDict = {}
     let substDict["name"] = $USER
