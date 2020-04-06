@@ -375,3 +375,4 @@ endfunction
 
 autocmd BufNewFile *.c,*.cc,*.cpp,*.h call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.cpp")
 autocmd BufNewFile *.py call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.py")
+autocmd BufNewFile *.sh call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.sh")
