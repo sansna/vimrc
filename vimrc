@@ -43,6 +43,7 @@ Plugin 'pangloss/vim-javascript'            "js indentation
 Plugin 'google/vim-maktaba'                 "google's codefmt tool
 Plugin 'google/vim-codefmt'                 "google's codefmt tool
 Plugin 'google/vim-glaive'                  "google's codefmt tool
+Plugin 'tpope/vim-abolish'                  "camelcase/snakecase
 
 call vundle#end()
 call glaive#Install()
