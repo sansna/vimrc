@@ -43,6 +43,12 @@ Plugin 'vim-scripts/boolpat.vim'            "plugin to search several words usin
 Plugin 'junegunn/vim-easy-align'            "Plugin to align easily using gaip
 Plugin 'mattn/emmet-vim'                    "Plugin to write html/css easily, see Tutorial. notes: select lines, <C-M>, and type: div#div>p#p$* #=id, $=idx, * means branching
 Plugin 'pangloss/vim-javascript'            "js indentation
+Plugin 'google/vim-maktaba'                 "google's codefmt tool
+Plugin 'google/vim-codefmt'                 "google's codefmt tool
+Plugin 'google/vim-glaive'                  "google's codefmt tool
+
+call vundle#end()
+call glaive#Install()
 
 noremap <c-k> <c-w>k                "split windows inter-switch
 noremap <c-j> <c-w>j
