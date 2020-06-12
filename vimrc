@@ -1,3 +1,4 @@
+set mmp=10000                       "maxmempattern
 set nocompatible                    "needed by Vundle.vim
 set foldcolumn=0                    "foldcolumn diables by default"
 set diffopt=foldcolumn:2            "except for vimdiff mode
