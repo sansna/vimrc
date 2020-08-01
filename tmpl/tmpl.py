@@ -8,6 +8,15 @@
 #sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 import time
 
+# App Config
+# XXX: https://stackoverflow.com/questions/3536620/how-to-change-a-module-variable-from-another-module
+#if __name__ == "__main__":
+#    import config.base
+#    if not config.base.Configured:
+#        config.base.Configured = True
+#        config.base.App = "<<app>>"
+#        config.base.Env = config.base.ENV_PRODUCTION
+
 now = int(time.time())
 today = int(now+8*3600)/86400*86400-8*3600
 dayts = 86400

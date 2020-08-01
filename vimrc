@@ -381,6 +381,7 @@ function AddTemplate(tmpl_file)
     let substDict = {}
     let substDict["name"] = $USER
     let substDict["date"] = strftime("%Y %b %d %X")
+    let substDict["app"] = expand('%:r')
     exe '%s/<<\([^>]*\)>>/\=substDict[submatch(1)]/g'
     set nomodified
     "normal G
