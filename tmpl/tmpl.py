@@ -32,6 +32,10 @@ BeginOfCurrentMonth = datetime.date(Year, Month, 1)
 BeginOfLastMonth = (BeginOfCurrentMonth - datetime.timedelta(1)).replace(day=1)
 BeginOfCurrentYear = BeginOfCurrentMonth.replace(month=1)
 BeginOfLastYear = (BeginOfCurrentYear - datetime.timedelta(1)).replace(month=1, day=1)
+BeginOfCurrentMonth = int(time.mktime(BeginOfCurrentMonth.timetuple()))
+BeginOfLastMonth = int(time.mktime(BeginOfLastMonth.timetuple()))
+BeginOfCurrentYear = int(time.mktime(BeginOfCurrentYear.timetuple()))
+BeginOfLastYear = int(time.mktime(BeginOfLastYear.timetuple()))
 
 def YMD(ts):
     return time.strftime("%Y%m%d", time.localtime(ts))
