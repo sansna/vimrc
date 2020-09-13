@@ -307,10 +307,12 @@ set conceallevel=1
 "CCTree Cfg
 let CCTreeDbFileMaxSize=1000000000
 
+"expand tabs
 function SetET()
     set et
     retab
 endfunction
+"donot expand tabs
 function SetNoET()
     set noet
     retab
@@ -335,7 +337,7 @@ endfunction
 "markdown scripts
 au FileType md call SetMDOptions()
 au FileType markdown call SetMDOptions()
-au FileType sh,vim call SetET()
+au FileType sh,vim,yaml call SetET()
 "c/cpp scripts
 au FileType c,cpp,h,hpp,cxx call SetCCPPOptions()
 "haskell scripts
