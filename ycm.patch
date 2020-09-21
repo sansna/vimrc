@@ -1,0 +1,14 @@
+diff --git a/build.py b/build.py
+index 5b31c1f2..fea98801 100755
+--- a/build.py
++++ b/build.py
+@@ -295,7 +295,9 @@ def GetPossiblePythonLibraryDirectories():
+ 
+ 
+ def FindPythonLibraries():
+-  include_dir = sysconfig.get_config_var( 'INCLUDEPY' )
++  # include_dir = sysconfig.get_config_var( 'INCLUDEPY' )
++  include_dir = "/Library/Developer/CommandLineTools/Library/"\
++    + "Frameworks/Python3.framework/Versions/3.7/Headers"
+   if not p.isfile( p.join( include_dir, 'Python.h' ) ):
+     sys.exit( NO_PYTHON_HEADERS_ERROR.format( include_dir = include_dir ) )
