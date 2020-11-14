@@ -253,6 +253,7 @@ let g:ycm_language_server = [
 "Golang Short-cuts
 au FileType go call SetGOOptions()
 au FileType python call SetPYOptions()
+au FileType java call SetJAVAOptions()
 function SetGOOptions()
     nmap <leader>gi :GoInstallBinaries
     nmap <leader>r <Plug>(go-run)
@@ -275,6 +276,12 @@ endfunction
 
 function SetPYOptions()
     nnoremap <leader>S :let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>:!python %<CR>:!sleep 2<CR>:!rm %c<CR>
+endfunction
+
+function SetJAVAOptions()
+    " To enable java code format with leader-F, enable the following. Where the jar can be found https://github.com/google/google-java-format
+    "Glaive codefmt google_java_executable="java -jar /path/to/google-java-format-VERSION-all-deps.jar"
+    nnoremap <leader>S :FormatCode<CR>:let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>
 endfunction
 
 "emmet-vim conf
@@ -405,5 +412,3 @@ augroup autoformat_settings
     "autocmd FileType rust AutoFormatBuffer rustfmt
     "autocmd FileType vue AutoFormatBuffer prettier
 augroup END
-" To enable java code format with leader-F, enable the following. Where the jar can be found https://github.com/google/google-java-format
-"Glaive codefmt google_java_executable="java -jar /path/to/google-java-format-VERSION-all-deps.jar"
