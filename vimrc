@@ -392,7 +392,9 @@ function AddTemplate(tmpl_file)
     let substDict["date"] = strftime("%Y %b %d %X")
     " to know more about filenames, use :help filename-modifiers<CR>
     let substDict["app"] = expand('%:r')
+    let substDict["filename"] = expand('%:t:r')
     let substDict["pdir"] = expand('%:h')
+    let substDict["jpackage"] = substitute(substDict["pdir"], "/", ".", "")
     exe '%s/<<\([^>]*\)>>/\=substDict[submatch(1)]/g'
     set nomodified
     "normal G

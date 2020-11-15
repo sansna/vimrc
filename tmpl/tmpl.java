@@ -2,10 +2,10 @@
  * Author :  <<name>>
  * Date   :  <<date>>
  */
-package <<pdir>>;
+package <<jpackage>>;
 import java.util.*;
 
-public class <<app>> {
+public class <<filename>> {
   public static void main(String[] args) {
     var s = new java.util.Scanner(System.in);
     System.out.println("ok");
