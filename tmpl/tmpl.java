@@ -2,6 +2,7 @@
  * Author :  <<name>>
  * Date   :  <<date>>
  */
+package <<pdir>>;
 import java.util.*;
 
 public class <<app>> {
