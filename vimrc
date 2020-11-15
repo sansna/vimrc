@@ -394,7 +394,7 @@ function AddTemplate(tmpl_file)
     let substDict["app"] = expand('%:r')
     let substDict["filename"] = expand('%:t:r')
     let substDict["pdir"] = expand('%:h')
-    let substDict["jpackage"] = substitute(substDict["pdir"], "/", ".", "")
+    let substDict["jpackage"] = substitute(substDict["pdir"], "/", ".", "g")
     exe '%s/<<\([^>]*\)>>/\=substDict[submatch(1)]/g'
     set nomodified
     "normal G
