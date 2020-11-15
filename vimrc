@@ -399,6 +399,7 @@ endfunction
 autocmd BufNewFile *.c,*.cc,*.cpp,*.h call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.cpp")
 autocmd BufNewFile *.py call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.py")
 autocmd BufNewFile *.sh call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.sh")
+autocmd BufNewFile *.java call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.java")
 augroup autoformat_settings
     "autocmd FileType bzl AutoFormatBuffer buildifier
     "autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
