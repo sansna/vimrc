@@ -254,6 +254,7 @@ let g:ycm_language_server = [
 "Golang Short-cuts
 au FileType go call SetGOOptions()
 au FileType python call SetPYOptions()
+au FileType java call SetJAVAOptions()
 function SetGOOptions()
     nmap <leader>gi :GoInstallBinaries
     nmap <leader>r <Plug>(go-run)
@@ -276,6 +277,12 @@ endfunction
 
 function SetPYOptions()
     nnoremap <leader>S :let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>:!python %<CR>:!sleep 2<CR>:!rm %c<CR>
+endfunction
+
+function SetJAVAOptions()
+    " To enable java code format with leader-F, enable the following. Where the jar can be found https://github.com/google/google-java-format
+    "Glaive codefmt google_java_executable="java -jar /path/to/google-java-format-VERSION-all-deps.jar"
+    nnoremap <leader>S :FormatCode<CR>:let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>
 endfunction
 
 "emmet-vim conf
@@ -385,7 +392,11 @@ function AddTemplate(tmpl_file)
     let substDict = {}
     let substDict["name"] = $USER
     let substDict["date"] = strftime("%Y %b %d %X")
+    " to know more about filenames, use :help filename-modifiers<CR>
     let substDict["app"] = expand('%:r')
+    let substDict["filename"] = expand('%:t:r')
+    let substDict["pdir"] = expand('%:h')
+    let substDict["jpackage"] = substitute(substDict["pdir"], "/", ".", "g")
     exe '%s/<<\([^>]*\)>>/\=substDict[submatch(1)]/g'
     set nomodified
     "normal G
@@ -394,3 +405,17 @@ endfunction
 autocmd BufNewFile *.c,*.cc,*.cpp,*.h call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.cpp")
 autocmd BufNewFile *.py call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.py")
 autocmd BufNewFile *.sh call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.sh")
+autocmd BufNewFile *.java call AddTemplate("~/GitRepo/sansna/vimrc/tmpl/tmpl.java")
+augroup autoformat_settings
+    "autocmd FileType bzl AutoFormatBuffer buildifier
+    "autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
+    "autocmd FileType dart AutoFormatBuffer dartfmt
+    "autocmd FileType go AutoFormatBuffer gofmt
+    "autocmd FileType gn AutoFormatBuffer gn
+    "autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+    "autocmd FileType java AutoFormatBuffer google-java-format
+    "autocmd FileType python AutoFormatBuffer yapf
+    "" Alternative: autocmd FileType python AutoFormatBuffer autopep8
+    "autocmd FileType rust AutoFormatBuffer rustfmt
+    "autocmd FileType vue AutoFormatBuffer prettier
+augroup END
