@@ -153,6 +153,8 @@ vnoremap // y/<C-r>"<CR>N
 nnoremap <c-c> :nohl<CR>:pclose<CR>
 "shortcut for no-high-light & close scratch [ Plugin.YCM ]
 nnoremap <c-Q> :q!<CR>
+nnoremap <c-m> /[A-Z]<CR>
+"to next uppercase
 
 nnoremap <c-F9> :SCCompile<CR>
 "shortcut for compilation
