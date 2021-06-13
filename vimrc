@@ -283,7 +283,7 @@ function SetPYOptions()
 endfunction
 
 function SetJSOptions()
-    nnoremap <leader>S :let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>:!node %<CR>:!sleep 2<CR>:!rm %c<CR>
+    nnoremap <leader>S :let __line=line('.')<CR>:let __col=col('.')<CR>:w !sudo tee % 2>&1 1>/dev/null<CR>:edit!<CR><CR>:cal cursor(__line, __col)<CR>:unlet __line<CR>:unlet __col<CR>:!node %<CR>:!sleep 2<CR>
 endfunction
 
 function SetJAVAOptions()
