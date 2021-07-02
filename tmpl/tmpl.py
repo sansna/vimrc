@@ -47,8 +47,8 @@ def DAY(ts):
     return time.strftime("%d", time.localtime(ts))
 
 def main():
-    print Year, Month, Day
-    print BeginOfLastYear, BeginOfLastMonth, BeginOfCurrentYear, BeginOfCurrentMonth
+    print (Year, Month, Day)
+    print (BeginOfLastYear, BeginOfLastMonth, BeginOfCurrentYear, BeginOfCurrentMonth)
 
 if __name__ == "__main__":
     main()
